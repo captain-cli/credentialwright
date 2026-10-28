@@ -6,6 +6,13 @@ from .core import ensure, plan, parse_env
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="credentialwright")
+
+    parser.add_argument(
+        "--version",
+        action="version",
+        version="credentialwright 0.2.0",
+    )
+
     cmds = parser.add_subparsers(dest="command", required=True)
     cmd = cmds.add_parser("ensure")
     cmd.add_argument("--spec", required=True)
